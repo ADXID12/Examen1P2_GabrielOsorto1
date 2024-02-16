@@ -4,14 +4,13 @@ import java.util.Date;
 
 public class Usuarios {
 
-    private String nombre, apellido, contraseña, sexo, departamento;
-    private int NumIdentidad;
+    private String nombre, apellido, contraseña, sexo, departamento,NumIdentidad;
     private Date fechaNacimiento;
 
     public Usuarios() {
     }
 
-    public Usuarios(String nombre, String apellido, String contraseña, String sexo, String departamento, int NumIdentidad, Date fechaNacimiento) {
+    public Usuarios(String nombre, String apellido, String contraseña, String sexo, String departamento, String NumIdentidad, Date fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.contraseña = contraseña;
@@ -61,11 +60,11 @@ public class Usuarios {
         this.departamento = departamento;
     }
 
-    public int getNumIdentidad() {
+    public String getNumIdentidad() {
         return NumIdentidad;
     }
 
-    public void setNumIdentidad(int NumIdentidad) {
+    public void setNumIdentidad(String NumIdentidad) {
         this.NumIdentidad = NumIdentidad;
     }
 

@@ -10,7 +10,7 @@ public class Empleados extends Usuarios {
     public Empleados() {
     }
 
-    public Empleados(String Carrera, String PuestoLaboral, int Añostrabajando, String nombre, String apellido, String contraseña, String sexo, String departamento, int NumIdentidad, Date fechaNacimiento) {
+    public Empleados(String Carrera, String PuestoLaboral, int Añostrabajando, String nombre, String apellido, String contraseña, String sexo, String departamento, String NumIdentidad, Date fechaNacimiento) {
         super(nombre, apellido, contraseña, sexo, departamento, NumIdentidad, fechaNacimiento);
         this.Carrera = Carrera;
         this.PuestoLaboral = PuestoLaboral;

@@ -1,11 +1,17 @@
 
 package PrincipalPackage;
 import java.util.*;
+import javax.swing.JOptionPane;
 public class RegistroNacional extends javax.swing.JFrame {
     static Random ran= new Random();
     public RegistroNacional() {
         initComponents();
+                Empleados nuevoEmpleado = new Empleados("Ingeniería", "Desarrollador", 5, "Juan", "Pérez", "password123", "Masculino", "Francisco Morazan", "012319943429", null);        
+        Civiles nuevoCivil = new Civiles("María", "Gómez", "contraseña123", "Femenino", "Cortes", "0210200013458", null);
+        usuarios.add(nuevoEmpleado);
+        usuarios.add(nuevoCivil);
     }
+            static ArrayList usuarios= new ArrayList();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -119,10 +125,21 @@ public class RegistroNacional extends javax.swing.JFrame {
     }//GEN-LAST:event_RecibirContraseñaUserActionPerformed
 
     private void IngresarBotonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarBotonLoginMouseClicked
-        String nombreUsuario = RecibirNombreUser.getText();
-        String contraseña = RecibirContraseñaUser.getText();
+String nombreUsuario = RecibirNombreUser.getText();
+String contraseña = RecibirContraseñaUser.getText();
+
+for (Object usuarioObj : usuarios) {
+    Usuarios usuario = (Usuarios) usuarioObj;
+    if (nombreUsuario.equalsIgnoreCase(usuario.getNombre())) {
+        if (contraseña.equals(usuario.getContraseña())) {
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "contraseña incorrecta");
+        }
         
-        
+        break;
+    }
+}
     }//GEN-LAST:event_IngresarBotonLoginMouseClicked
 
     public static void main(String args[]) {
@@ -147,9 +164,6 @@ public class RegistroNacional extends javax.swing.JFrame {
             }
         });
 
-        ArrayList<Empleados>empleado= new ArrayList<>();
-        ArrayList<Civiles>civiles= new ArrayList<>();
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

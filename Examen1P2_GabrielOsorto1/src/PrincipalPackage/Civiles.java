@@ -14,4 +14,8 @@ public class Civiles extends Usuarios {
         super(nombre, apellido, contraseña, sexo, departamento, NumIdentidad, fechaNacimiento);
     }
 
+    public ArrayList<String> getTramites() {
+        return tramites;
+    }
+    
 }

@@ -14,25 +14,26 @@ public class RegistroNacional extends javax.swing.JFrame {
         pn_Login.setVisible(true);
         pn_accesoEmpleado.setVisible(false);
         pn_accesoCivil.setVisible(false);
-        
+
         //AQUI CREO DOS USERS, UNO TIPO EMPLEADO Y EL OTRO TIPO CIVIL
         Date fechaNacimiento = new Date(1979, 11, 12);
         String Departamento = "Francisco Morazan";
-        String NumeroID = NoIdentidad(Departamento, fechaNacimiento);
-        Empleados nuevoEmpleado = new Empleados("Ingeniería", "Desarrollador", 5, "Juan", "Perez", "password123", "Masculino", Departamento, null, fechaNacimiento);
+        String NumeroID1 = NoIdentidad(Departamento, fechaNacimiento);
+        Empleados nuevoEmpleado = new Empleados("Ingeniería", "Desarrollador", 5, "Juan", "Perez", "password123", "Masculino", Departamento, NumeroID1, fechaNacimiento);
         fechaNacimiento = new Date(1980, 10, 5);
         Departamento = "Cortes";
-        NumeroID = NoIdentidad(Departamento, fechaNacimiento);
-        Civiles nuevoCivil = new Civiles("Maria", "Gomez", "contra123", "Femenino", Departamento, null, fechaNacimiento);
+        String NumeroID2 = NoIdentidad(Departamento, fechaNacimiento);
+        Civiles nuevoCivil = new Civiles("Maria", "Gomez", "contra123", "Femenino", Departamento, NumeroID2, fechaNacimiento);
         usuarios.add(nuevoEmpleado);
         usuarios.add(nuevoCivil);
-        
+
         //AQUI ORGANIZO LO DE LAS COMBOBOX
         String[] opcionesSexo = {"Masculino", "Femenino"};
         CambiarSexo.setModel(new javax.swing.DefaultComboBoxModel<>(opcionesSexo));
         String[] opcionesDepto = {"Francisco Morazan", "Cortes", "Comayagua"};
         CambiarDepto.setModel(new javax.swing.DefaultComboBoxModel<>(opcionesDepto));
-
+        String[] opcionesID = {NumeroID1, NumeroID2};
+        numeroID.setModel(new javax.swing.DefaultComboBoxModel<>(opcionesID));
     }
     static ArrayList usuarios = new ArrayList();
 
@@ -63,7 +64,7 @@ public class RegistroNacional extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         NuevoNombre = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        NuevoApellido = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         CambiarSexo = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
@@ -72,6 +73,13 @@ public class RegistroNacional extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         BotonCerrarSesion1 = new javax.swing.JButton();
+        BotonActualizar = new javax.swing.JButton();
+        choice1 = new java.awt.Choice();
+        choice2 = new java.awt.Choice();
+        choice3 = new java.awt.Choice();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         pn_accesoCivil = new javax.swing.JTabbedPane();
         InfoPersonalCivil = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -314,6 +322,25 @@ public class RegistroNacional extends javax.swing.JFrame {
             }
         });
 
+        BotonActualizar.setText("Actualizar");
+        BotonActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonActualizarMouseClicked(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Dia");
+
+        jLabel19.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Mes");
+
+        jLabel20.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Año");
+
         javax.swing.GroupLayout ModificarCivilesLayout = new javax.swing.GroupLayout(ModificarCiviles);
         ModificarCiviles.setLayout(ModificarCivilesLayout);
         ModificarCivilesLayout.setHorizontalGroup(
@@ -322,26 +349,47 @@ public class RegistroNacional extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BotonCerrarSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(ModificarCivilesLayout.createSequentialGroup()
                         .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel8)
                             .addComponent(NuevoNombre)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField1)
+                            .addComponent(NuevoApellido)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CambiarSexo, 0, 219, Short.MAX_VALUE)
                             .addComponent(numeroID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel10)
                             .addComponent(CambiarDepto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarCivilesLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BotonCerrarSesion1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                            .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11)
+                                    .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                                        .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel12)
+                                            .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel18)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(choice2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel19)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(choice3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel20)))
+                                .addGap(0, 3, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarCivilesLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61))))))
         );
         ModificarCivilesLayout.setVerticalGroup(
             ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,17 +409,33 @@ public class RegistroNacional extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CambiarSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CambiarDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonCerrarSesion1)
+                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                        .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NuevoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel9))
+                            .addComponent(choice3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                                .addComponent(CambiarSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarCivilesLayout.createSequentialGroup()
+                                .addComponent(BotonActualizar)
+                                .addGap(4, 4, 4)))
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CambiarDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonCerrarSesion1))
+                    .addComponent(choice2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -616,6 +680,30 @@ public class RegistroNacional extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void BotonActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonActualizarMouseClicked
+        int opcionModificar= numeroID.getSelectedIndex();
+        String nvNombre=NuevoNombre.getText();
+        String nvApellido=NuevoApellido.getText();
+        if(CambiarSexo.getSelectedIndex()==0){
+            String nvSexo="Masculino";
+        }else{
+            String nvSexo="Femenino";
+        }
+        int op1=CambiarDepto.getSelectedIndex();
+        String nvDepto="";
+        switch(op1){
+            case 0:
+                nvDepto="Francisco Morazan";
+                break;
+            case 1:
+                nvDepto="Cortes";
+                break;
+            case 2:
+                nvDepto="Comayagua";
+                break;
+        }
+    }//GEN-LAST:event_BotonActualizarMouseClicked
+
     public static void main(String args[]) {
 
         try {
@@ -644,6 +732,7 @@ public class RegistroNacional extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonActualizar;
     private javax.swing.JButton BotonCerrarSesion;
     private javax.swing.JButton BotonCerrarSesion1;
     private javax.swing.JButton BotonCerrarSesion2;
@@ -655,6 +744,7 @@ public class RegistroNacional extends javax.swing.JFrame {
     private javax.swing.JButton IngresarBotonLogin;
     private javax.swing.JPanel ModificarCiviles;
     private javax.swing.JTextField NombreQueja;
+    private javax.swing.JTextField NuevoApellido;
     private javax.swing.JTextField NuevoNombre;
     private javax.swing.JTextField RecibirContraseñaUser;
     private javax.swing.JTextField RecibirNombreUser;
@@ -662,6 +752,9 @@ public class RegistroNacional extends javax.swing.JFrame {
     private javax.swing.JTable TablaEventosCiviles;
     private javax.swing.JTable TablaEventosCiviles1;
     private javax.swing.JTable TablaInfoPersonalCivil;
+    private java.awt.Choice choice1;
+    private java.awt.Choice choice2;
+    private java.awt.Choice choice3;
     private javax.swing.JPanel fondoLayout;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -673,7 +766,10 @@ public class RegistroNacional extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -688,7 +784,6 @@ public class RegistroNacional extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JComboBox<String> numeroID;
     private javax.swing.JPanel pn_Login;

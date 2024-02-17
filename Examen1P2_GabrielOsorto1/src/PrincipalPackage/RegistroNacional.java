@@ -681,25 +681,31 @@ public class RegistroNacional extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void BotonActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonActualizarMouseClicked
-        int opcionModificar= numeroID.getSelectedIndex();
-        String nvNombre=NuevoNombre.getText();
-        String nvApellido=NuevoApellido.getText();
-        if(CambiarSexo.getSelectedIndex()==0){
-            String nvSexo="Masculino";
-        }else{
-            String nvSexo="Femenino";
-        }
-        int op1=CambiarDepto.getSelectedIndex();
-        String nvDepto="";
-        switch(op1){
-            case 0:
-                nvDepto="Francisco Morazan";
+        int opcionModificar = numeroID.getSelectedIndex();
+        String nvNombre = NuevoNombre.getText();
+        String nvApellido = NuevoApellido.getText();
+        String nvSexo="";
+        int op=CambiarSexo.getSelectedIndex();
+        switch(op){
+            case 0: 
+                nvSexo="Masculino";
                 break;
             case 1:
-                nvDepto="Cortes";
+                nvSexo="Femenino";
+                break;
+                
+        }
+        int op1 = CambiarDepto.getSelectedIndex();
+        String nvDepto = "";
+        switch (op1) {
+            case 0:
+                nvDepto = "Francisco Morazan";
+                break;
+            case 1:
+                nvDepto = "Cortes";
                 break;
             case 2:
-                nvDepto="Comayagua";
+                nvDepto = "Comayagua";
                 break;
         }
     }//GEN-LAST:event_BotonActualizarMouseClicked

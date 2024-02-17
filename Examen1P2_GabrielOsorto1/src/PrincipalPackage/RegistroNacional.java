@@ -4,12 +4,14 @@ import java.util.*;
 import javax.swing.JOptionPane;
 public class RegistroNacional extends javax.swing.JFrame {
     static Random ran= new Random();
+    
     public RegistroNacional() {
         initComponents();
+        this.setResizable(false);
         pn_Login.setVisible(true);
         pn_accesoEmpleado.setVisible(false);
         
-                Empleados nuevoEmpleado = new Empleados("Ingeniería", "Desarrollador", 5, "Juan", "Pérez", "password123", "Masculino", "Francisco Morazan", "012319943429", null);        
+        Empleados nuevoEmpleado = new Empleados("Ingeniería", "Desarrollador", 5, "Juan", "Pérez", "password123", "Masculino", "Francisco Morazan", "012319943429", null);
         Civiles nuevoCivil = new Civiles("María", "Gómez", "contraseña123", "Femenino", "Cortes", "0210200013458", null);
         usuarios.add(nuevoEmpleado);
         usuarios.add(nuevoCivil);
@@ -29,7 +31,7 @@ public class RegistroNacional extends javax.swing.JFrame {
         RecibirContraseñaUser = new javax.swing.JTextField();
         IngresarBotonLogin = new javax.swing.JButton();
         pn_accesoEmpleado = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        InformacionCiviles = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -38,7 +40,10 @@ public class RegistroNacional extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaEventosCiviles = new javax.swing.JTable();
         BotonCerrarSesion = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        ModificarCiviles = new javax.swing.JPanel();
+        numeroID = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        NuevoNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,7 +78,53 @@ public class RegistroNacional extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        javax.swing.GroupLayout pn_LoginLayout = new javax.swing.GroupLayout(pn_Login);
+        pn_Login.setLayout(pn_LoginLayout);
+        pn_LoginLayout.setHorizontalGroup(
+            pn_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_LoginLayout.createSequentialGroup()
+                .addGroup(pn_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn_LoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2))
+                    .addGroup(pn_LoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(RecibirNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pn_LoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3))
+                    .addGroup(pn_LoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(RecibirContraseñaUser, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pn_LoginLayout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(jLabel1))
+                    .addGroup(pn_LoginLayout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(IngresarBotonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(107, Short.MAX_VALUE))
+        );
+        pn_LoginLayout.setVerticalGroup(
+            pn_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_LoginLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(RecibirNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(RecibirContraseñaUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(IngresarBotonLogin)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+
+        fondoLayout.add(pn_Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 400));
+
+        InformacionCiviles.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -114,34 +165,34 @@ public class RegistroNacional extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout InformacionCivilesLayout = new javax.swing.GroupLayout(InformacionCiviles);
+        InformacionCiviles.setLayout(InformacionCivilesLayout);
+        InformacionCivilesLayout.setHorizontalGroup(
+            InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InformacionCivilesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InformacionCivilesLayout.createSequentialGroup()
+                        .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(InformacionCivilesLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(78, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(InformacionCivilesLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformacionCivilesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        InformacionCivilesLayout.setVerticalGroup(
+            InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InformacionCivilesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -157,65 +208,55 @@ public class RegistroNacional extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        pn_accesoEmpleado.addTab("Informacion Civiles", jPanel1);
+        pn_accesoEmpleado.addTab("Informacion Civiles", InformacionCiviles);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
-        );
+        ModificarCiviles.setBackground(new java.awt.Color(255, 255, 255));
+        ModificarCiviles.setForeground(new java.awt.Color(255, 255, 255));
 
-        pn_accesoEmpleado.addTab("Modificar Civiles", jPanel2);
+        numeroID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        numeroID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numeroIDActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout pn_LoginLayout = new javax.swing.GroupLayout(pn_Login);
-        pn_Login.setLayout(pn_LoginLayout);
-        pn_LoginLayout.setHorizontalGroup(
-            pn_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_LoginLayout.createSequentialGroup()
-                .addComponent(pn_accesoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(pn_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pn_LoginLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pn_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(RecibirNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RecibirContraseñaUser, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pn_LoginLayout.createSequentialGroup()
-                                .addGap(167, 167, 167)
-                                .addComponent(jLabel1))))
-                    .addGroup(pn_LoginLayout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(IngresarBotonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jLabel7.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Nombre");
+
+        NuevoNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NuevoNombreActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ModificarCivilesLayout = new javax.swing.GroupLayout(ModificarCiviles);
+        ModificarCiviles.setLayout(ModificarCivilesLayout);
+        ModificarCivilesLayout.setHorizontalGroup(
+            ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(numeroID, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(305, Short.MAX_VALUE))
         );
-        pn_LoginLayout.setVerticalGroup(
-            pn_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_LoginLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jLabel1)
-                .addGap(54, 54, 54)
-                .addComponent(jLabel2)
+        ModificarCivilesLayout.setVerticalGroup(
+            ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ModificarCivilesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(numeroID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RecibirNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RecibirContraseñaUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(IngresarBotonLogin)
-                .addGap(60, 60, 60))
-            .addGroup(pn_LoginLayout.createSequentialGroup()
-                .addComponent(pn_accesoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(NuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(266, Short.MAX_VALUE))
         );
 
-        fondoLayout.add(pn_Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 400));
+        pn_accesoEmpleado.addTab("Modificar Civiles", ModificarCiviles);
+
+        fondoLayout.add(pn_accesoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,40 +272,49 @@ public class RegistroNacional extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void IngresarBotonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarBotonLoginMouseClicked
+        String nombreUsuario = RecibirNombreUser.getText();
+        String contraseña = RecibirContraseñaUser.getText();
+
+        for (Object usuarioObj : usuarios) {
+            Usuarios usuario = (Usuarios) usuarioObj;
+            if (nombreUsuario.equalsIgnoreCase(usuario.getNombre())) {
+                if (contraseña.equals(usuario.getContraseña())) {
+                    if (usuario instanceof Empleados) {
+                        pn_Login.setVisible(false);
+                        pn_accesoEmpleado.setVisible(true);
+                    } else if (usuario instanceof Civiles) {
+                        JOptionPane.showMessageDialog(rootPane, "Este usuario es un civil.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "contraseña incorrecta");
+                }
+
+                break;
+            }
+        }
+    }//GEN-LAST:event_IngresarBotonLoginMouseClicked
+
     private void RecibirContraseñaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecibirContraseñaUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RecibirContraseñaUserActionPerformed
 
-    private void IngresarBotonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarBotonLoginMouseClicked
-String nombreUsuario = RecibirNombreUser.getText();
-String contraseña = RecibirContraseñaUser.getText();
-
-for (Object usuarioObj : usuarios) {
-    Usuarios usuario = (Usuarios) usuarioObj;
-    if (nombreUsuario.equalsIgnoreCase(usuario.getNombre())) {
-        if (contraseña.equals(usuario.getContraseña())) {
-if (usuario instanceof Empleados) {
-    pn_Login.setVisible(false);
-    pn_accesoEmpleado.setVisible(true);
-} else if (usuario instanceof Civiles) {
-
-}
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "contraseña incorrecta");
-        }
-        
-        break;
-    }
-}
-    }//GEN-LAST:event_IngresarBotonLoginMouseClicked
-
     private void BotonCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCerrarSesionMouseClicked
-       JOptionPane.showMessageDialog(rootPane, "Sesion Cerrada");
-       pn_accesoEmpleado.setVisible(false);
-       pn_Login.setVisible(true);
+        JOptionPane.showMessageDialog(rootPane, "Sesion Cerrada");
+        pn_accesoEmpleado.setVisible(false);
+        pn_Login.setVisible(true);
     }//GEN-LAST:event_BotonCerrarSesionMouseClicked
 
+    private void numeroIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numeroIDActionPerformed
+
+    private void NuevoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NuevoNombreActionPerformed
+
     public static void main(String args[]) {
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -290,7 +340,10 @@ if (usuario instanceof Empleados) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonCerrarSesion;
+    private javax.swing.JPanel InformacionCiviles;
     private javax.swing.JButton IngresarBotonLogin;
+    private javax.swing.JPanel ModificarCiviles;
+    private javax.swing.JTextField NuevoNombre;
     private javax.swing.JTextField RecibirContraseñaUser;
     private javax.swing.JTextField RecibirNombreUser;
     private javax.swing.JTable TablaCiviles;
@@ -302,10 +355,10 @@ if (usuario instanceof Empleados) {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JComboBox<String> numeroID;
     private javax.swing.JPanel pn_Login;
     private javax.swing.JTabbedPane pn_accesoEmpleado;
     // End of variables declaration//GEN-END:variables

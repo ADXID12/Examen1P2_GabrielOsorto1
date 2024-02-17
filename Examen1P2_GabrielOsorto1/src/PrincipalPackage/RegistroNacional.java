@@ -1,6 +1,7 @@
 
 package PrincipalPackage;
 import java.util.*;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 public class RegistroNacional extends javax.swing.JFrame {
     static Random ran= new Random();
@@ -10,6 +11,7 @@ public class RegistroNacional extends javax.swing.JFrame {
         this.setResizable(false);
         pn_Login.setVisible(true);
         pn_accesoEmpleado.setVisible(false);
+        pn_accesoCivil.setVisible(false);
         
         Empleados nuevoEmpleado = new Empleados("Ingeniería", "Desarrollador", 5, "Juan", "Pérez", "password123", "Masculino", "Francisco Morazan", "012319943429", null);
         Civiles nuevoCivil = new Civiles("María", "Gómez", "contraseña123", "Femenino", "Cortes", "0210200013458", null);
@@ -17,6 +19,8 @@ public class RegistroNacional extends javax.swing.JFrame {
         usuarios.add(nuevoCivil);
     }
             static ArrayList usuarios= new ArrayList();
+
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -44,6 +48,25 @@ public class RegistroNacional extends javax.swing.JFrame {
         numeroID = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         NuevoNombre = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        CambiarSexo = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        CambiarDepto = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        pn_accesoCivil = new javax.swing.JTabbedPane();
+        InfoPersonalCivil = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TablaInfoPersonalCivil = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TablaEventosCiviles1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -172,23 +195,17 @@ public class RegistroNacional extends javax.swing.JFrame {
             .addGroup(InformacionCivilesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4)
                     .addGroup(InformacionCivilesLayout.createSequentialGroup()
-                        .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addGroup(InformacionCivilesLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(78, Short.MAX_VALUE))
-                    .addGroup(InformacionCivilesLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformacionCivilesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(6, 6, 6)
+                        .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BotonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         InformacionCivilesLayout.setVerticalGroup(
             InformacionCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,9 +220,9 @@ public class RegistroNacional extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addComponent(BotonCerrarSesion)
-                .addGap(15, 15, 15))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pn_accesoEmpleado.addTab("Informacion Civiles", InformacionCiviles);
@@ -230,33 +247,179 @@ public class RegistroNacional extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Contraseña");
+
+        jLabel9.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Sexo");
+
+        CambiarSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CambiarSexo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CambiarSexoMouseClicked(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Departamento");
+
+        CambiarDepto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel11.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Apellido");
+
+        jTextField2.setText("jTextField2");
+
+        jLabel12.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Fecha de Nacimiento");
+
         javax.swing.GroupLayout ModificarCivilesLayout = new javax.swing.GroupLayout(ModificarCiviles);
         ModificarCiviles.setLayout(ModificarCivilesLayout);
         ModificarCivilesLayout.setHorizontalGroup(
             ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ModificarCivilesLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel8)
+                    .addComponent(NuevoNombre)
                     .addComponent(jLabel7)
-                    .addComponent(numeroID, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(305, Short.MAX_VALUE))
+                    .addComponent(jTextField1)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CambiarSexo, 0, 219, Short.MAX_VALUE)
+                    .addComponent(numeroID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10)
+                    .addComponent(CambiarDepto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ModificarCivilesLayout.setVerticalGroup(
             ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ModificarCivilesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(numeroID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ModificarCivilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CambiarSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CambiarDepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pn_accesoEmpleado.addTab("Modificar Civiles", ModificarCiviles);
 
         fondoLayout.add(pn_accesoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        pn_accesoCivil.setForeground(new java.awt.Color(255, 255, 255));
+
+        InfoPersonalCivil.setBackground(new java.awt.Color(255, 255, 255));
+        InfoPersonalCivil.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel13.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Bienvenido!!");
+
+        jLabel14.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Informacion Personal");
+
+        TablaInfoPersonalCivil.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "ID", "Fecha de Nacimiento"
+            }
+        ));
+        jScrollPane3.setViewportView(TablaInfoPersonalCivil);
+
+        jLabel15.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Tramites");
+
+        TablaEventosCiviles1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre tramite", "Descripcion", "Fecha", "ID"
+            }
+        ));
+        jScrollPane4.setViewportView(TablaEventosCiviles1);
+
+        javax.swing.GroupLayout InfoPersonalCivilLayout = new javax.swing.GroupLayout(InfoPersonalCivil);
+        InfoPersonalCivil.setLayout(InfoPersonalCivilLayout);
+        InfoPersonalCivilLayout.setHorizontalGroup(
+            InfoPersonalCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InfoPersonalCivilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(InfoPersonalCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                    .addComponent(jLabel15)
+                    .addComponent(jScrollPane4))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        InfoPersonalCivilLayout.setVerticalGroup(
+            InfoPersonalCivilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InfoPersonalCivilLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+
+        pn_accesoCivil.addTab("Informacion Personal", InfoPersonalCivil);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 546, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 349, Short.MAX_VALUE)
+        );
+
+        pn_accesoCivil.addTab("Gestion de Tramites", jPanel1);
+
+        fondoLayout.add(pn_accesoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -283,8 +446,11 @@ public class RegistroNacional extends javax.swing.JFrame {
                     if (usuario instanceof Empleados) {
                         pn_Login.setVisible(false);
                         pn_accesoEmpleado.setVisible(true);
+                        pn_accesoCivil-setVisible(false);
                     } else if (usuario instanceof Civiles) {
-                        JOptionPane.showMessageDialog(rootPane, "Este usuario es un civil.");
+                        pn_Login.setVisible(false);
+                        pn_accesoEmpleado.setVisible(false);
+                        pn_accesoCivil.setVisible(true);
                     }
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "contraseña incorrecta");
@@ -302,6 +468,7 @@ public class RegistroNacional extends javax.swing.JFrame {
     private void BotonCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCerrarSesionMouseClicked
         JOptionPane.showMessageDialog(rootPane, "Sesion Cerrada");
         pn_accesoEmpleado.setVisible(false);
+        pn_accesoCivil.setVisible(false);
         pn_Login.setVisible(true);
     }//GEN-LAST:event_BotonCerrarSesionMouseClicked
 
@@ -312,6 +479,10 @@ public class RegistroNacional extends javax.swing.JFrame {
     private void NuevoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NuevoNombreActionPerformed
+
+    private void CambiarSexoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CambiarSexoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CambiarSexoMouseClicked
 
     public static void main(String args[]) {
         
@@ -340,6 +511,9 @@ public class RegistroNacional extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonCerrarSesion;
+    private javax.swing.JComboBox<String> CambiarDepto;
+    private javax.swing.JComboBox<String> CambiarSexo;
+    private javax.swing.JPanel InfoPersonalCivil;
     private javax.swing.JPanel InformacionCiviles;
     private javax.swing.JButton IngresarBotonLogin;
     private javax.swing.JPanel ModificarCiviles;
@@ -348,18 +522,34 @@ public class RegistroNacional extends javax.swing.JFrame {
     private javax.swing.JTextField RecibirNombreUser;
     private javax.swing.JTable TablaCiviles;
     private javax.swing.JTable TablaEventosCiviles;
+    private javax.swing.JTable TablaEventosCiviles1;
+    private javax.swing.JTable TablaInfoPersonalCivil;
     private javax.swing.JPanel fondoLayout;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JComboBox<String> numeroID;
     private javax.swing.JPanel pn_Login;
+    private javax.swing.JTabbedPane pn_accesoCivil;
     private javax.swing.JTabbedPane pn_accesoEmpleado;
     // End of variables declaration//GEN-END:variables
 public static String NoIdentidad(String depa,Date fechaNacimiento) {
